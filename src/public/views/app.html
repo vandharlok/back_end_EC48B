@@ -7,23 +7,46 @@
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-  <div class="main">
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Pesquisar álbum..." />
-    </div>
-    <div class="albums" id="albumContainer">
-      <div class="album">Viagens para New York</div>
-      <div class="album">Família</div>
-      <div class="album">Faculdade</div>
-      <div class="album">Trabalho</div>
-      <div class="album">Eventos</div>
-      <div class="album">Skate</div>
-    </div>
-  </div>
 
   <div class="sidebar">
     <button id="btnAlbuns">Álbuns</button>
     <button id="btnFotos">Fotos</button>
+  </div>
+  
+  <div class="main">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Pesquisar álbum..." />
+    </div> 
+
+    <h2 class="h2_title_photo_galery">Galeria de Fotos</h2>
+
+    <div class="albums" id="albumContainer">
+      <!-- Cada item da galeria -->
+      <div class="album">
+        <img src="https://picsum.photos/300?random=1" alt="Viagens para New York" />
+        <span>Viagens para New York</span>
+      </div>
+      <div class="album">
+        <img src="https://picsum.photos/300?random=2" alt="Família" />
+        <span>Família</span>
+      </div>
+      <div class="album">
+        <img src="https://picsum.photos/300?random=3" alt="Faculdade" />
+        <span>Faculdade</span>
+      </div>
+      <div class="album">
+        <img src="https://picsum.photos/300?random=4" alt="Trabalho" />
+        <span>Trabalho</span>
+      </div>
+      <div class="album">
+        <img src="https://picsum.photos/300?random=5" alt="Eventos" />
+        <span>Eventos</span>
+      </div>
+      <div class="album">
+        <img src="https://picsum.photos/300?random=6" alt="Skate" />
+        <span>Skate</span>
+      </div>
+    </div>
   </div>
 
   <script src="../js/script.js"></script>
