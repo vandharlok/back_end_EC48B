@@ -1,0 +1,20 @@
+{
+  "name": "photo-storage-backend",
+  "version": "1.0.0",
+  "description": "Biblioteca de acesso ao MongoDB para armazenamento de fotos e álbuns",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "mongoose": "^7.3.1",
+    "winston": "^3.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
