@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #f0f0f0;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 20%;
+  background: #ffffffd5;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #005fcc;
+}
+
+/* Área principal */
+.main {
+  width: 80%;
+  padding: 5% 5% 5% 5%;
+  background-color: #fff;
+  border-radius: 12px 0 0 12px;
+  margin: 5% 20% 5% 5%;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de pesquisa */
+.search-bar {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Área dos álbuns */
+.albums {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+.album {
+  width: calc(25% - 1rem);
+  background: #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .album {
+    width: calc(50% - 1rem);
+  }
+  .sidebar {
+    width: 25%;
+  }
+  .main {
+    width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: none;
+  }
+  .main {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}
