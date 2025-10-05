@@ -1,6 +1,5 @@
-// src/index.js
-require('dotenv').config(); // tem que estar no topo
-require('express-async-errors'); // para capturar async errors automaticamente
+require('dotenv').config(); 
+require('express-async-errors'); 
 const express = require('express');
 const app = express();
 const logger = require('./logger');
@@ -15,7 +14,6 @@ console.log('MONGO_URI =', process.env.MONGO_URI);
 app.use(express.json());
 app.use('/api', routes);
 
-// health
 app.get('/', (req, res) => res.send('Photo storage API is running'));
 
 app.use(errorHandler);

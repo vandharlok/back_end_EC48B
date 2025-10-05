@@ -2,9 +2,9 @@
 const mongoose = require('mongoose');
 
 const AlbumSchema = new mongoose.Schema({
-  name: { type: String, required: true, trim: true },
-  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  coverUrl: { type: String }, // thumbnail
+  name: { type: String, required: [true, 'Nome do álbum é obrigatório'], trim: true },
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: [true, 'Owner é obrigatório'] },
+  coverUrl: { type: String }, // thumbnail opcional
   createdAt: { type: Date, default: Date.now }
 });
 

@@ -1,4 +1,3 @@
-// src/repositories/AlbumRepository.js
 const Album = require('../models/Album');
 const logger = require('../logger');
 

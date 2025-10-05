@@ -1,4 +1,3 @@
-// src/repositories/PhotoRepository.js
 const Photo = require('../models/Photo');
 const logger = require('../logger');
 

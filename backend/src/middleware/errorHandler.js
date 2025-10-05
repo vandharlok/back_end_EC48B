@@ -1,19 +1,22 @@
-// src/middleware/errorHandler.js
 const logger = require('../logger');
 
 function errorHandler(err, req, res, next) {
-  logger.error('Unhandled error', {
+  const statusCode = err.statusCode || 500;
+
+  // Log completo do erro
+  logger.error('Erro capturado pelo middleware', {
     message: err.message,
     stack: err.stack,
     route: req.originalUrl,
     method: req.method,
-    body: req.body
+    body: req.body,
+    params: req.params,
+    query: req.query
   });
 
-  const status = err.statusCode || 500;
-  res.status(status).json({
+  res.status(statusCode).json({
     success: false,
-    error: err.message || 'Internal Server Error'
+    error: err.message
   });
 }
 

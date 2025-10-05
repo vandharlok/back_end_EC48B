@@ -1,4 +1,3 @@
-// src/repositories/UserRepository.js
 const User = require('../models/User');
 const logger = require('../logger');
 
