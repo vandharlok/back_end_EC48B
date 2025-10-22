@@ -1,0 +1,13 @@
+{
+  "name": "Google Photos",
+  "version": "1.0.0",
+  "description": "Projeto simples de backend para recuperação, focado em classes, CRUD e log de erros.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
+
