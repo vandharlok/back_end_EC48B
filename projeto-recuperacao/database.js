@@ -1,10 +1,9 @@
 const usuarios = [];
-const produtos = [];
-const pedidos = [];
+const fotos = [];
+const albuns = [];
 
-// Exportamos os arrays para que outras classes possam importá-los e manipulá-los.
 module.exports = {
   usuarios,
-  produtos,
-  pedidos
+  fotos,
+  albuns
 };
