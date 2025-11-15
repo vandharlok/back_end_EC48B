@@ -7,8 +7,8 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 
-// 2. Importação dos Models (AQUI ESTÁ A CORREÇÃO)
-// Note o caminho './models/'
+// 2. Importação dos Models
+
 const { Usuario, ValidationError } = require('./models/Usuario');
 const { Foto } = require('./models/Foto');
 const { Album } = require('./models/Album');
@@ -189,8 +189,6 @@ app.post('/fotos', requireLogin, (req, res) => {
     });
   }
 });
-
-// (Aqui você adicionaria mais rotas: POST /albuns, POST /fotos/:id/delete, etc.)
 
 // 6. Inicialização do Servidor
 app.listen(port, () => {
