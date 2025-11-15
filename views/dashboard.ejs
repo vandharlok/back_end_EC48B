@@ -1,0 +1,77 @@
+<!-- Página do Dashboard (Privada) -->
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Olá, <%= user.nome %>!</h1>
+  <p>Este é o seu dashboard. Aqui você pode gerenciar suas fotos e álbuns.</p>
+
+  <!-- Inclui o partial de mensagens (para erros de upload, etc) -->
+  <%- include('partials/messages', { message: message }) %>
+
+  <div class="dashboard-grid">
+    
+    <!-- Seção: Adicionar Nova Foto -->
+    <section class="form-section">
+      <h2>Adicionar Nova Foto</h2>
+      <form action="/fotos" method="POST">
+        <div class="form-group">
+          <label for="url">URL da Imagem (https://...)</label>
+          <input type="text" id="url" name="url" placeholder="https://exemplo.com/imagem.png" required>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" name="descricao" placeholder="Ex: Férias na praia">
+        </div>
+        <button type="submit" class="button">Salvar Foto</button>
+      </form>
+    </section>
+
+    <!-- Seção: Adicionar Novo Álbum -->
+    <section class="form-section">
+      <h2>Criar Novo Álbum</h2>
+      <!-- (Formulário para criar álbum - Fica como próximo passo!) -->
+      <form>
+        <div class="form-group">
+          <label for="titulo">Título do Álbum</label>
+          <input type="text" id="titulo" name="titulo" disabled>
+        </div>
+        <button type="submit" class="button" disabled>Salvar Álbum (Em breve)</button>
+      </form>
+    </section>
+
+    <!-- Seção: Minhas Fotos -->
+    <section class="photo-gallery-section" style="grid-column: span 2;">
+      <h2>Minhas Fotos (<%= fotos.length %>)</h2>
+      <% if (fotos.length > 0) { %>
+        <div class="photo-gallery">
+          <% fotos.forEach(foto => { %>
+            <div class="photo-card">
+              <img src="<%= foto.url %>" alt="<%= foto.descricao %>" 
+                   onerror="this.src='https://placehold.co/150x120/eee/aaa?text=Invalido';">
+              <p><%= foto.descricao || 'Sem descrição' %></p>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p>Você ainda não enviou nenhuma foto.</p>
+      <% } %>
+    </section>
+
+    <!-- Seção: Meus Álbuns -->
+    <section class="album-list-section" style="grid-column: span 2;">
+      <h2>Meus Álbuns (<%= albuns.length %>)</h2>
+      <% if (albuns.length > 0) { %>
+        <ul class="album-list">
+          <% albuns.forEach(album => { %>
+            <li><%= album.titulo %> (<%= album.idsDeFotos.length %> fotos)</li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>Você ainda não criou nenhum álbum.</p>
+      <% } %>
+    </section>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

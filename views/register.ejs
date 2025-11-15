@@ -1,0 +1,27 @@
+<!-- Página de Registro -->
+<%- include('partials/header') %>
+
+<div class="container-sm">
+  <h1>Registrar Conta</h1>
+
+  <!-- Inclui o partial de mensagens -->
+  <%- include('partials/messages', { message: message }) %>
+  
+  <form action="/register" method="POST">
+    <div class="form-group">
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha (mínimo 4 caracteres)</label>
+      <input type="password" id="senha" name="senha" required>
+    </div>
+    <button type="submit" class="button">Criar Conta</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

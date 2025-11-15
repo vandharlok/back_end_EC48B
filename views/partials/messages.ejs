@@ -1,0 +1,9 @@
+<!-- 
+  Este 'partial' é para mostrar as mensagens de erro/sucesso
+  que são passadas pelo 'res.render'
+-->
+<% if (message) { %>
+  <div class="message <%= message.type %>">
+    <%= message.text %>
+  </div>
+<% } %>

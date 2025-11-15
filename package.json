@@ -1,0 +1,19 @@
+{
+  "name": "projeto2-google-fotos",
+  "version": "1.0.0",
+  "description": "Projeto 2 da disciplina, usando Express.js, EJS e Sessões.",
+  "main": "index.js",
+  "author": "Allan e Vanderson",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

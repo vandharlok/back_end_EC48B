@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= titulo %> | Google Fotos (P2)</title>
+  <!-- Link para o nosso CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Google Fotos</a>
+    <div class="nav-links">
+      <!-- 
+        Aqui está a mágica da sessão!
+        Se 'user' existe (logado), mostra Dashboard/Logout
+        Se 'user' NÃO existe (deslogado), mostra Login/Registrar
+      -->
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout" class="button">Logout</a>
+      <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register" class="button">Registrar</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <!-- O conteúdo da página será injetado abaixo -->
